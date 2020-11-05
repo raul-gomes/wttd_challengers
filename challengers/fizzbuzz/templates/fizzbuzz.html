@@ -1,0 +1,19 @@
+{% load static %}
+<script src="{% static 'js/jquery-1.11.0.min.js' %}"></script>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>FizzBuzz</title>
+</head>
+<body>
+    <h2>FizzBuzz</h2>
+    <form action="." novalidate method="post">
+        {% csrf_token %}
+        <label for="number_fizzbuzz">Entre com o numero: </label>
+        <input id="'number" type="text" name="number_field">
+        <input type="submit" value="OK">
+    </form>
+</body>
+</html>
