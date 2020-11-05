@@ -9,10 +9,10 @@
 </head>
 <body>
     <h2>FizzBuzz</h2>
-    <form action="." novalidate method="post">
+    <form action="/fizzbuzz/" method="post">
         {% csrf_token %}
-        <label for="number_fizzbuzz">Entre com o numero: </label>
-        <input id="'number" type="text" name="number_field">
+        <label for="id_number">Entre com o numero: </label>
+        <input id="id_number" type="text" name="number">
         <input type="submit" value="OK">
     </form>
 </body>

@@ -4,15 +4,26 @@ from django.contrib import messages
 
 from challengers.fizzbuzz.form import NumberForm
 
-from challengers.fizzbuzz.model._fizzbuzz import sayFizzBuzz
+from challengers.fizzbuzz.model.fizzbuzzCode import sayFizzBuzz
 
 
 def fizzbuzz(request):
 
+    if request.method == 'POST':
+        return create(request)
+    else:
+        return render(request, 'fizzbuzz.html')
+
+
+def create(request):
+
     numberForm = NumberForm(request.POST)
 
-    say = sayFizzBuzz(numberForm.cleaned_data)
+    if not numberForm.is_valid():
+        return render(request, 'index.html')
 
-    messages.success(request, say)
+    say = sayFizzBuzz(numberForm.cleaned_data['number'])
+
+    messages.success(request, f'{say}')
 
     return HttpResponseRedirect('/fizzbuzz/')
