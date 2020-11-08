@@ -6,5 +6,31 @@
 </head>
 <body>
     <h2>HappyNumbers</h2>
+    <form action="/happynumbers/" method="post">
+        {% csrf_token %}
+        <label for="id_happy_or_sad">Entre com o numero: </label>
+        <input id="id_happy_or_sad" type="text" name="happy_or_sad">
+        <input type="submit" value="OK">
+    </form>
+    {% if messages %}
+        {% for message in messages %}
+            <div class="alert success">
+                <p>{{ message }}</p>
+                {% ifequal message|stringformat:"s" 'Happy' %}
+                    <img src="https://st.depositphotos.com/1001911/1554/v/950/depositphotos_15540341-stock-illustration-thumb-up-emoticon.jpg">
+                {% endifequal %}
+                {% ifequal message|stringformat:"s" 'Sad' %}
+                    <img src="https://static7.depositphotos.com/1001911/681/v/950/depositphotos_6815136-stock-illustration-dislike-emoticon.jpg">
+                {% endifequal %}
+            </div>
+        {% endfor %}
+
+    {% endif %}
+
+    <br>
+    <br>
+    <form action="/" method="get">
+        <input type="submit" value="Voltar">
+    </form>
 </body>
 </html>

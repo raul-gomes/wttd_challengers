@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'challengers.core',
     'challengers.fizzbuzz',
     'challengers.happynumbers',
+    'challengers.jokenpo'
 ]
 
 MIDDLEWARE = [

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JoKenPo</title>
+</head>
+<body>
+    <h2>JoKenPo</h2>
+
+    <form action="/jokenpo/" method="post"> {% csrf_token %}
+        <li><input type="radio" id="jo" name="game">Jo</li>
+        <li><input type="radio" id="ken" name="game">Ken</li>
+        <li><input type="radio" id="po" name="game">Pô</li>
+        <input type="submit" value="Play">
+    </form>
+
+
+</body>
+</html>

@@ -19,10 +19,12 @@ from django.urls import path
 import challengers.core.views
 from challengers.fizzbuzz.views import fizzbuzz
 from challengers.happynumbers.views import happynumbers
+from challengers.jokenpo.views import jokenpo
 
 urlpatterns = [
     path('', challengers.core.views.home),
     path('fizzbuzz/', challengers.fizzbuzz.views.fizzbuzz),
     path('happynumbers/', challengers.happynumbers.views.happynumbers),
+    path('jokenpo/', jokenpo),
     path('admin/', admin.site.urls),
 ]
